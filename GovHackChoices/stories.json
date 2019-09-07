@@ -1,0 +1,60 @@
+[
+    {
+        "id": 0,
+        "name": "",
+        "image": "",
+        "story": [
+            {
+                "id": 0,
+                "question": "Story 0",
+                "image": "Mock_CardImage",
+                "left": {
+                    "label": "",
+                    "next": 1,
+                    "review": {
+                        "label": "",
+                        "infoUrl": ""
+                    }
+                },
+                "right": {
+                    "label": "",
+                    "next": 2,
+                    "review": null
+                }
+            },
+            {
+                "id": 1,
+                "question": "Story 1",
+                "image": "",
+                "left": {
+                    "label": "",
+                    "next": null,
+                    "review": null
+                },
+                "right": {
+                    "label": "",
+                    "next": null,
+                    "review": null
+                }
+            },
+            {
+                "id": 2,
+                "question": "Story 2",
+                "image": "Mock_CardImage",
+                "left": {
+                    "label": "",
+                    "next": null,
+                    "review": {
+                        "label": "",
+                        "infoUrl": ""
+                    }
+                },
+                "right": {
+                    "label": "",
+                    "next": null,
+                    "review": null
+                }
+            }
+        ]
+    }
+]
