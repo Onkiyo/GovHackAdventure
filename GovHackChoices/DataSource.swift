@@ -29,9 +29,15 @@ struct Choice: Codable {
     let review: Review?
 }
 
-struct Review: Codable {
+struct Review: Codable, Identifiable {
+    let title: String
     let label: String
+    let image: String
     let infoUrl: String
+    
+    var id: String {
+        return title + label + image
+    }
 }
 
 enum CardChoice {
@@ -62,10 +68,7 @@ class DataSource {
     }
     
     func nextCard(after card: Card, choice: CardChoice) -> Card? {
-        guard let id = choice == .left ? card.left.next : card.right.next else {
-            return nil
-        }
-        
+        guard let id = choice == .left ? card.left.next : card.right.next else { return nil }
         return allCards.first { $0.id == id }
     }
 }

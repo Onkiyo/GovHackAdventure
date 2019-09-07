@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		977D857E23232FD70063E0AE /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 977D857D23232FD70063E0AE /* DataSource.swift */; };
 		977D8580232330D20063E0AE /* stories.json in Resources */ = {isa = PBXBuildFile; fileRef = 977D857F232330D20063E0AE /* stories.json */; };
+		977D858223236F720063E0AE /* ReviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 977D858123236F720063E0AE /* ReviewView.swift */; };
 		97FFB7A92322D24A00478358 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97FFB7A82322D24A00478358 /* AppDelegate.swift */; };
 		97FFB7AB2322D24A00478358 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97FFB7AA2322D24A00478358 /* SceneDelegate.swift */; };
 		97FFB7AD2322D24A00478358 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97FFB7AC2322D24A00478358 /* ContentView.swift */; };
@@ -21,6 +22,7 @@
 /* Begin PBXFileReference section */
 		977D857D23232FD70063E0AE /* DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
 		977D857F232330D20063E0AE /* stories.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = stories.json; sourceTree = "<group>"; };
+		977D858123236F720063E0AE /* ReviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewView.swift; sourceTree = "<group>"; };
 		97FFB7A52322D24A00478358 /* GovHackChoices.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GovHackChoices.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		97FFB7A82322D24A00478358 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		97FFB7AA2322D24A00478358 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -65,6 +67,7 @@
 				97FFB7A82322D24A00478358 /* AppDelegate.swift */,
 				97FFB7AA2322D24A00478358 /* SceneDelegate.swift */,
 				97FFB7AC2322D24A00478358 /* ContentView.swift */,
+				977D858123236F720063E0AE /* ReviewView.swift */,
 				977D857D23232FD70063E0AE /* DataSource.swift */,
 				97FFB7BC2322DA9600478358 /* GeometryRectGetter.swift */,
 				977D857F232330D20063E0AE /* stories.json */,
@@ -160,6 +163,7 @@
 				97FFB7A92322D24A00478358 /* AppDelegate.swift in Sources */,
 				97FFB7AB2322D24A00478358 /* SceneDelegate.swift in Sources */,
 				977D857E23232FD70063E0AE /* DataSource.swift in Sources */,
+				977D858223236F720063E0AE /* ReviewView.swift in Sources */,
 				97FFB7AD2322D24A00478358 /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

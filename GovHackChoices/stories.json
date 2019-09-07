@@ -6,51 +6,211 @@
         "story": [
             {
                 "id": 0,
-                "question": "Story 0",
+                "question": "Beep! Beep! Beep!",
                 "image": "Mock_CardImage",
                 "left": {
-                    "label": "",
+                    "label": "Swipes at the alarm",
                     "next": 1,
-                    "review": {
-                        "label": "",
-                        "infoUrl": ""
-                    }
+                    "review": null
                 },
                 "right": {
-                    "label": "",
+                    "label": "Pulls pillow over head",
                     "next": 2,
                     "review": null
                 }
             },
             {
                 "id": 1,
-                "question": "Story 1",
-                "image": "",
+                "question": "Ah man! I slept in again. Better jump in the shower.",
+                "image": "Mock_CardImage",
+                "left": {
+                    "label": "Damn I stink, gonna have to wash my hair too now",
+                    "next": 11,
+                    "review": null
+                },
+                "right": {
+                    "label": "K, hairs wet, Im done!",
+                    "next": 4,
+                    "review": {
+                        "title": "You chose to have a shorter shower.",
+                        "label": "Around 4% of all rainful is taken for human usage. Taking a shorter shower goes a long way to reduce your impact.",
+                        "image": "Mock_CardImage",
+                        "infoUrl": ""
+                    }
+                }
+            },
+            {
+                "id": 2,
+                "question": "Alright, I'm up... jumping in the shower. Do I feel like a hot or cold breakfast?",
+                "image": "Mock_CardImage",
+                "left": {
+                    "label": "It's a hot day, lets go Butter on Toast",
+                    "next": 8,
+                    "review": {
+                        "title": "You chose Butter on Toast.",
+                        "label": "HERE",
+                        "image": "Mock_CardImage",
+                        "infoUrl": ""
+                    }
+                },
+                "right": {
+                    "label": "Something hot sounds good. Porridge with nuts and honey",
+                    "next": 8,
+                    "review": {
+                        "title": "You chose Porridge with nuts.",
+                        "label": "HERE",
+                        "image": "Mock_CardImage",
+                        "infoUrl": ""
+                    }
+                }
+            },
+            {
+                "id": 4,
+                "question": "No time for cerial this morning... Gotta eat on the way.",
+                "image": "Mock_CardImage",
+                "left": {
+                    "label": "Grab a Banana",
+                    "next": 6,
+                    "review": {
+                        "title": "You grabbed a banana instead of the muesli bar.",
+                        "label": "HERE",
+                        "image": "Mock_CardImage",
+                        "infoUrl": ""
+                    }
+                },
+                "right": {
+                    "label": "Grab a muesli bar",
+                    "next": 6,
+                    "review": {
+                        "title": "You grabbed a muesli bar instead of a banana.",
+                        "label": "HERE",
+                        "image": "Mock_CardImage",
+                        "infoUrl": ""
+                    }
+                }
+            },
+            {
+                "id": 6,
+                "question": "Keys, phone, wallet, muesli bar! And Im out the door.",
+                "image": "Mock_CardImage",
                 "left": {
                     "label": "",
                     "next": null,
                     "review": null
                 },
                 "right": {
-                    "label": "",
+                    "label": "Done",
                     "next": null,
                     "review": null
                 }
             },
             {
-                "id": 2,
-                "question": "Story 2",
+                "id": 8,
+                "question": "Have a few minutes to spare. Should probably...",
+                "image": "Mock_CardImage",
+                "left": {
+                    "label": "Water the garden",
+                    "next": 9,
+                    "review": null
+                },
+                "right": {
+                    "label": "Do the laundry",
+                    "next": 10,
+                    "review": null
+                }
+            },
+            
+            {
+                "id": 9,
+                "question": "Better remember to turn off the water before I leave..",
                 "image": "Mock_CardImage",
                 "left": {
                     "label": "",
                     "next": null,
+                    "review": null
+                },
+                "right": {
+                    "label": "Done",
+                    "next": null,
+                    "review": null
+                }
+            },
+            {
+                "id": 10,
+                "question": "I only have a few items to wash, maybe I should wait..",
+                "image": "Mock_CardImage",
+                "left": {
+                    "label": "Water the garden instead",
+                    "next": 9,
+                    "review": null
+                },
+                "right": {
+                    "label": "Take a break",
+                    "next": null,
+                    "review": null
+                }
+            },
+            {
+                "id": 11,
+                "question": "Don't have time for breakfast, better run to the Cafe. Should I get...",
+                "image": "Mock_CardImage",
+                "left": {
+                    "label": "Butter on toast",
+                    "next": 12,
                     "review": {
-                        "label": "",
+                        "title": "You chose Butter on Toast.",
+                        "label": "HERE",
+                        "image": "Mock_CardImage",
                         "infoUrl": ""
                     }
                 },
                 "right": {
+                    "label": "Porridge with nuts and honey",
+                    "next": 12,
+                    "review": {
+                        "title": "You chose Porridge with nuts and honey.",
+                        "label": "HERE",
+                        "image": "Mock_CardImage",
+                        "infoUrl": ""
+                    }
+                }
+            },
+            {
+                "id": 12,
+                "question": "Feeling thirsty... should I get a Coffee or Juice?",
+                "image": "Mock_CardImage",
+                "left": {
+                    "label": "Coffee",
+                    "next": 13,
+                    "review": {
+                        "title": "You chose Coffee instead Juice.",
+                        "label": "HERE",
+                        "image": "Mock_CardImage",
+                        "infoUrl": ""
+                    }
+                },
+                "right": {
+                    "label": "Juice",
+                    "next": 13,
+                    "review": {
+                        "title": "You chose Juice instead Coffee.",
+                        "label": "HERE",
+                        "image": "Mock_CardImage",
+                        "infoUrl": ""
+                    }
+                }
+            },
+            {
+                "id": 13,
+                "question": "Nothing like a cafe breakfast to start the morning",
+                "image": "Mock_CardImage",
+                "left": {
                     "label": "",
+                    "next": null,
+                    "review": null
+                },
+                "right": {
+                    "label": "Done",
                     "next": null,
                     "review": null
                 }
