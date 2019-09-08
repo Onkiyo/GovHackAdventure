@@ -8,61 +8,80 @@
 
 import SwiftUI
 
-// 087D58
-private let treeGreen = Color("TreeGreen")
-
-// C81E54
-private let govHackPink = Color("GovHackPink")
-
 struct ReviewView: View {
     @ObservedObject var viewModel: ViewModel
     @Environment(\.presentationMode) private var presentationMode
     
     var body: some View {
-        VStack(spacing: 0) {
-            ZStack(alignment: .top) {
-                Image("Green Forest")
-                    .resizable()
-                    .scaledToFill()
-                    .frame(maxWidth: .infinity)
-                
-                HStack {
-                    Spacer()
-                    Button(action: {
-                        self.presentationMode.wrappedValue.dismiss()
-                    }) {
-                        Image(systemName: "xmark.circle.fill")
-                            .foregroundColor(Color.white)
-                            .frame(width: 32, height: 32, alignment: .center)
+        ScrollView {
+            VStack {
+                ZStack(alignment: .top) {
+                    Image("Review_1")
+                        .resizable()
+                        .scaledToFill()
+
+                    HStack {
+                        Spacer()
+                        Button(action: {
+                            self.presentationMode.wrappedValue.dismiss()
+                        }) {
+                            Image(systemName: "xmark.circle.fill")
+                                .resizable()
+                                .foregroundColor(Color.white)
+                                .frame(width: 32, height: 32, alignment: .center)
+                        }
                     }
+                    .padding()
                 }
-                .padding()
-            }
-            
-            VStack(spacing: 15) {
-                Text("Congratulations!")
-                    .foregroundColor(Color.white)
-                    .font(Font.system(size: 20, weight: .semibold))
-                
-                Text("The choices you made preserved a lot of water so you ended up with a beautiful green forest!")
-                    .foregroundColor(Color.white)
-                    .multilineTextAlignment(.center)
-                    .padding(.horizontal)
-                    
-            }
-            .padding()
-            .frame(height: 150)
-            .background(treeGreen)
-            .padding(.horizontal, -4)
-            
-            ForEach(viewModel.reviews) { review in
-                ReviewListItem(title: review.title,
-                               label: review.label,
-                               image: review.image,
-                               infoUrl: review.infoUrl)
             }
         }
     }
+    
+//    var body: some View {
+//        VStack(spacing: 0) {
+//            ZStack(alignment: .top) {
+//                Image("Green Forest")
+//                    .resizable()
+//                    .scaledToFill()
+//                    .frame(maxWidth: .infinity)
+//
+//                HStack {
+//                    Spacer()
+//                    Button(action: {
+//                        self.presentationMode.wrappedValue.dismiss()
+//                    }) {
+//                        Image(systemName: "xmark.circle.fill")
+//                            .foregroundColor(Color.white)
+//                            .frame(width: 32, height: 32, alignment: .center)
+//                    }
+//                }
+//                .padding()
+//            }
+//
+//            VStack(spacing: 15) {
+//                Text("Congratulations!")
+//                    .foregroundColor(Color.white)
+//                    .font(Font.system(size: 20, weight: .semibold))
+//
+//                Text("The choices you made preserved a lot of water so you ended up with a beautiful green forest!")
+//                    .foregroundColor(Color.white)
+//                    .multilineTextAlignment(.center)
+//                    .padding(.horizontal)
+//
+//            }
+//            .padding()
+//            .frame(height: 150)
+//            .background(treeGreen)
+//            .padding(.horizontal, -4)
+//
+//            ForEach(viewModel.reviews) { review in
+//                ReviewListItem(title: review.title,
+//                               label: review.label,
+//                               image: review.image,
+//                               infoUrl: review.infoUrl)
+//            }
+//        }
+//    }
 }
 
 private struct ReviewListItem: View {
@@ -78,17 +97,17 @@ private struct ReviewListItem: View {
     
     var body: some View {
         ZStack {
-            
+
             Text(label)
                 .font(Font.system(size: 17, weight: .regular))
                 .background(GeometryRectGetter(rect: $labelRect))
                 .hidden()
-            
+
             Text(exploreText)
                 .font(Font.system(size: 15, weight: .semibold))
                 .background(GeometryRectGetter(rect: $exploreRect))
                 .hidden()
-            
+
             VStack(alignment: .leading, spacing: 8) {
                 HStack(alignment: .top, spacing: 8) {
                     Image("Shower")
@@ -97,22 +116,22 @@ private struct ReviewListItem: View {
                         .frame(width: 38, height: 38, alignment: .bottom)
                         .background(treeGreen)
                         .cornerRadius(8)
-                        
+
                     Text(title)
                         .font(Font.system(size: 15, weight: .semibold))
                 }
                 .frame(maxWidth: .infinity, alignment: .leading)
-                
+
                 Text(label)
                     .font(Font.system(size: 17, weight: .regular))
                     .frame(width: labelRect.size.width, height: labelRect.size.height, alignment: .leading)
                     .padding(.bottom, 16)
-                    
-                
+
+
                 Text(exploreText)
                     .font(Font.system(size: 15, weight: .semibold))
                     .frame(width: exploreRect.size.width, height: exploreRect.size.height, alignment: .leading)
-                
+
                 VStack(alignment: .leading, spacing: 8) {
 //                    HStack {
 //

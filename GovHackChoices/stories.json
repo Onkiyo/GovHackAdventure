@@ -7,7 +7,7 @@
             {
                 "id": 0,
                 "question": "Beep! Beep! Beep!",
-                "image": "Mock_CardImage",
+                "image": "image_0.pdf",
                 "left": {
                     "label": "Swipes at the alarm",
                     "next": 1,
@@ -21,30 +21,30 @@
             },
             {
                 "id": 1,
-                "question": "Ah man! I slept in again. Better jump in the shower.",
-                "image": "Mock_CardImage",
+                "question": "Oh no! I slept in again. I better jump in the shower.",
+                "image": "image_1.pdf",
                 "left": {
-                    "label": "Damn I stink, gonna have to wash my hair too now",
+                    "label": "I should also wash my hair",
                     "next": 11,
                     "review": null
                 },
                 "right": {
-                    "label": "K, hairs wet, Im done!",
+                    "label": "Ok, my hair is wet - I'm done!",
                     "next": 4,
                     "review": {
                         "title": "You chose to have a shorter shower.",
-                        "label": "Around 4% of all rainful is taken for human usage. Taking a shorter shower goes a long way to reduce your impact.",
+                        "label": "Around 4% of all rainfall is taken for human usage. Taking a shorter shower goes a long way to reduce your impact.",
                         "image": "Mock_CardImage",
-                        "infoUrl": ""
+                        "infoUrl": "https://data-melbournewater.opendata.arcgis.com/datasets/ab54f1679c3d4dd6b0f4030634fce861_0/data?selectedAttribute=supplied_ML"
                     }
                 }
             },
             {
                 "id": 2,
                 "question": "Alright, I'm up... jumping in the shower. Do I feel like a hot or cold breakfast?",
-                "image": "Mock_CardImage",
+                "image": "image_2.pdf",
                 "left": {
-                    "label": "It's a hot day, lets go Butter on Toast",
+                    "label": "It's a hot day, I'm thinking butter on toast",
                     "next": 8,
                     "review": {
                         "title": "You chose Butter on Toast.",
@@ -57,7 +57,7 @@
                     "label": "Something hot sounds good. Porridge with nuts and honey",
                     "next": 8,
                     "review": {
-                        "title": "You chose Porridge with nuts.",
+                        "title": "You chose porridge with nuts.",
                         "label": "HERE",
                         "image": "Mock_CardImage",
                         "infoUrl": ""
@@ -66,8 +66,8 @@
             },
             {
                 "id": 4,
-                "question": "No time for cerial this morning... Gotta eat on the way.",
-                "image": "Mock_CardImage",
+                "question": "No time for cereal this morning... I will have to eat on the way.",
+                "image": "image_4.pdf",
                 "left": {
                     "label": "Grab a Banana",
                     "next": 6,
@@ -91,8 +91,8 @@
             },
             {
                 "id": 6,
-                "question": "Keys, phone, wallet, muesli bar! And Im out the door.",
-                "image": "Mock_CardImage",
+                "question": "Keys, phone, wallet, muesli bar! And I'm out the door.",
+                "image": "image_6.pdf",
                 "left": {
                     "label": "",
                     "next": null,
@@ -106,8 +106,8 @@
             },
             {
                 "id": 8,
-                "question": "Have a few minutes to spare. Should probably...",
-                "image": "Mock_CardImage",
+                "question": "I have a few minutes to spare. I should probably...",
+                "image": "image_8.pdf",
                 "left": {
                     "label": "Water the garden",
                     "next": 9,
@@ -123,7 +123,7 @@
             {
                 "id": 9,
                 "question": "Better remember to turn off the water before I leave..",
-                "image": "Mock_CardImage",
+                "image": "image_9.pdf",
                 "left": {
                     "label": "",
                     "next": null,
@@ -138,7 +138,7 @@
             {
                 "id": 10,
                 "question": "I only have a few items to wash, maybe I should wait..",
-                "image": "Mock_CardImage",
+                "image": "image_10.pdf",
                 "left": {
                     "label": "Water the garden instead",
                     "next": 9,
@@ -152,8 +152,8 @@
             },
             {
                 "id": 11,
-                "question": "Don't have time for breakfast, better run to the Cafe. Should I get...",
-                "image": "Mock_CardImage",
+                "question": "I don't have time for breakfast, I better run to the cafe. Should I get...",
+                "image": "image_11.pdf",
                 "left": {
                     "label": "Butter on toast",
                     "next": 12,
@@ -178,7 +178,7 @@
             {
                 "id": 12,
                 "question": "Feeling thirsty... should I get a Coffee or Juice?",
-                "image": "Mock_CardImage",
+                "image": "image_12.pdf",
                 "left": {
                     "label": "Coffee",
                     "next": 13,
@@ -202,8 +202,8 @@
             },
             {
                 "id": 13,
-                "question": "Nothing like a cafe breakfast to start the morning",
-                "image": "Mock_CardImage",
+                "question": "Nothing like a cafe breakfast to start my morning",
+                "image": "image_13.pdf",
                 "left": {
                     "label": "",
                     "next": null,

@@ -9,6 +9,12 @@
 import SwiftUI
 import Combine
 
+// 087D58
+let treeGreen = Color("TreeGreen")
+
+// C81E54
+let govHackPink = Color("GovHackPink")
+
 class ViewModel: ObservableObject {
     private (set) var objectWillChange = PassthroughSubject<Void, Never>()
     
@@ -20,13 +26,13 @@ class ViewModel: ObservableObject {
         return cardReviews.map { $0.value }
     }
     
-    @Published private (set) var allCardsComplete: Bool = false { didSet { objectWillChange.send() }}
+    @Published private (set) var allCardsComplete: Bool = true { didSet { objectWillChange.send() }}
     
     private var currentCard: Card? = nil {
         didSet {
             self.currentCardId = String("ID: \(currentCard?.id ?? -1)")
             self.currentCardTitle = currentCard?.question ?? ""
-            self.currentCardImage = currentCard?.image ?? "blank"
+            self.currentCardImage = currentCard?.image.replacingOccurrences(of: ".pdf", with: "") ?? "blank"
             self.currentCardLeftChoiceText = currentCard?.left.label ?? ""
             self.currentCardRightChoiceText = currentCard?.right.label ?? ""
             self.currentCardHasLeftChoice = (currentCard?.left.label ?? "") != ""
@@ -43,7 +49,12 @@ class ViewModel: ObservableObject {
     private (set) var currentCardHasRightChoice: Bool = false { didSet { objectWillChange.send() }}
     
     init() {
-        replay()
+        allCardsComplete = false
+        
+        DispatchQueue.main.async {
+            self.allCardsComplete = true
+        }
+        
     }
     
     func cardChoiceSelected(cardChoice: CardChoice) {
@@ -100,6 +111,7 @@ struct ContentView: View {
                         .font(Font.system(size: 15, weight: .semibold))
                         .multilineTextAlignment(.leading)
                         .lineLimit(2)
+                        .frame(width: viewGeometry.frame(in: .global).size.width - 40, alignment: .leading)
                         .background(GeometryRectGetter(rect: self.$leftTextRect))
                         .opacity(0.0)
                     
@@ -107,18 +119,19 @@ struct ContentView: View {
                         .font(Font.system(size: 15, weight: .semibold))
                         .multilineTextAlignment(.leading)
                         .lineLimit(2)
+                        .frame(width: viewGeometry.frame(in: .global).size.width - 40, alignment: .trailing)
                         .background(GeometryRectGetter(rect: self.$rightTextRect))
                         .opacity(0.0)
                 }
                 
-                VStack {
-                    Text(self.viewModel.currentCardId)
-                        .font(Font.system(size: 10, weight: .bold))
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                        .padding(.horizontal, 40)
+                VStack(spacing: 0) {
+//                    Text(self.viewModel.currentCardId)
+//                        .font(Font.system(size: 10, weight: .bold))
+//                        .frame(maxWidth: .infinity, alignment: .leading)
+//                        .padding(.horizontal, 40)
+                    
                     CardView(viewModel: self.viewModel, rect: self.$cardViewRect, choiceDisplay: self.$choiceDisplay, showCard: self.$showCard, transitionCardForCardChoicePublisher: self.transitionCardForCardChoicePublisher)
-                        .frame(width: viewGeometry.frame(in: .global).size.width - 20)
-                        .padding(.horizontal, 20)
+                        .frame(width: viewGeometry.frame(in: .global).size.width)
                         .background(GeometryRectGetter(rect: self.$cardViewRect))
                     
                     ZStack {
@@ -142,10 +155,8 @@ struct ContentView: View {
                                     .multilineTextAlignment(.leading)
                                     .lineLimit(2)
                             }
-                            .frame(minWidth: self.leftTextRect.size.width,
-                                   idealWidth: self.leftTextRect.size.width,
-                                   maxWidth: viewGeometry.frame(in: .global).size.width - 20,
-                                   maxHeight: self.leftTextRect.size.height,
+                            .frame(width: self.leftTextRect.size.width,
+                                   height: self.leftTextRect.size.height,
                                    alignment: .leading)
                             
                             HStack(alignment: .center, spacing: 8) {
@@ -163,10 +174,8 @@ struct ContentView: View {
                                 .disabled(!self.viewModel.currentCardHasRightChoice)
                                 .opacity(self.viewModel.currentCardHasRightChoice ? 1.0 : 0.0)
                             }
-                            .frame(minWidth: self.rightTextRect.size.width,
-                                   idealWidth: self.rightTextRect.size.width,
-                                   maxWidth: viewGeometry.frame(in: .global).size.width - 20,
-                                   maxHeight: self.rightTextRect.size.height,
+                            .frame(width: self.rightTextRect.size.width,
+                                   height: self.rightTextRect.size.height,
                                    alignment: .trailing)
                         }
                         .opacity(0.8)
@@ -174,30 +183,70 @@ struct ContentView: View {
                     }
                 }
                 .frame(width: viewGeometry.frame(in: .global).size.width, height: viewGeometry.frame(in: .global).size.height, alignment: .bottom)
-                
+                                
                 if self.viewModel.allCardsComplete {
-                    VStack(alignment: .center, spacing: 32) {
-                        Spacer()
-                        Button(action: {
-                            self.viewModel.replay()
-                        }) {
-                            Text("Replay Story")
-                                .font(Font.system(size: 22, weight: .medium))
+                    ZStack {
+                        VStack(spacing: 0) {
+                            Image("Green Forest")
+                                .resizable()
+                                .scaledToFill()
+//                                .frame(maxWidth: .infinity)
+                            
+                            Image("HomeScreen")
+//                                .resizable()
+                                .scaledToFill()
+//                                .frame(maxWidth: .infinity)
+                            
                         }
-
-                        Button(action: {
-                            self.showReview = true
-                        }) {
-                            Text("See Review")
-                                .font(Font.system(size: 22, weight: .medium))
+                        .frame(width: UIScreen.main.bounds.size.width,
+                               height: UIScreen.main.bounds.size.height,
+                               alignment: .top)
+                        .background(treeGreen)
+                        .edgesIgnoringSafeArea(.vertical)
+                        
+                        
+                        
+                        VStack(alignment: .center, spacing: 24) {
+                            Spacer()
+                            
+                            Button(action: {
+                                self.viewModel.replay()
+                            }) {
+                                Text("Start The Story")
+                                    .font(Font.system(size: 15, weight: .regular))
+                                    .foregroundColor(treeGreen)
+                            }
+                            .frame(width: viewGeometry.frame(in: .global).size.width - 40, height: 35, alignment: .center)
+                            .background(Color.white)
+                            .cornerRadius(8)
+                            
+                            
+                            
+                            if !self.viewModel.reviews.isEmpty {
+                                Button(action: {
+                                    self.showReview = true
+                                }) {
+                                    Text("See Review")
+                                        .font(Font.system(size: 15, weight: .regular))
+                                        .foregroundColor(treeGreen)
+                                }
+                                .frame(width: viewGeometry.frame(in: .global).size.width - 40, height: 35, alignment: .center)
+                                .background(Color.white)
+                                .cornerRadius(8)
+                            }
+                            
+                            Rectangle()
+                                .fill(treeGreen)
+                                .frame(height: 50)
                         }
-                        Spacer()
                     }
                 }
             }
             .onReceive(self.viewModel.$allCardsComplete) { (allCardsComplete) in
-                guard allCardsComplete else { return }
-                self.showReview = true
+                guard allCardsComplete && !self.viewModel.reviews.isEmpty else { return }
+                DispatchQueue.main.async {
+                    self.showReview = true
+                }
             }
             .sheet(isPresented: self.$showReview) {
                 ReviewView(viewModel: self.viewModel)
@@ -272,13 +321,9 @@ struct CardView: View {
             }
         
         return VStack {
+            
             Image(viewModel.currentCardImage)
-                .resizable()
-                .scaledToFit()
-                .clipped()
-                .aspectRatio(0.8, contentMode: .fit)
-                .cornerRadius(15)
-                .shadow(color: Color.black.opacity(0.7), radius: 10, x: 0.0, y: 3.0)
+                //.shadow(color: Color.black.opacity(0.7), radius: 10, x: 0.0, y: 3.0)
                 .offset(x: offset.width, y: offset.height)
                 .rotationEffect(Angle(degrees: rotation))
                 .opacity(showCard ? 1.0 : 0.0)
